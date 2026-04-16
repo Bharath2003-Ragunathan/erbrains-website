@@ -1,0 +1,899 @@
+<div class="top-bar">
+    <div class="left">
+        <a href="mailto:info@erbrains.com" class="contact-link">
+            <i class="fas fa-envelope icon"></i>
+            info@erbrains.com
+        </a>
+
+        <a href="tel:+918041673099" class="contact-link">
+            <i class="fas fa-phone icon"></i>
+            080-41673099
+        </a>
+    </div>
+
+    <div class="right">
+        <div class="country">
+            <div class="selected">
+                <img src="assets/flags/india.png" /> IND
+            </div>
+
+            <div class="dropdown">
+                <div><img src="assets/flags/usa.png" /> USA</div>
+                <div><img src="assets/flags/uae.png" /> UAE</div>
+                <div><img src="assets/flags/global.png" /> Global</div>
+            </div>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/company/erbrains-it-solutions-private-limited/" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+
+            <a href="https://x.com/erbrainss" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+
+            <a href="https://www.instagram.com/erbrains_/" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="https://www.facebook.com/erbrainsitsolutions/" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar">
+
+    <!-- LEFT: LOGO -->
+    <div class="logo">
+        <img src="assets/logo.png" alt="ERBrains Logo" />
+    </div>
+
+    <!-- RIGHT: MENU ICON (MOBILE ONLY) -->
+    <div class="menu-toggle" (click)="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <ul class="menu">
+
+        <li>Home</li>
+        <li>About Us</li>
+
+        <!-- OUR SERVICES -->
+        <li class="dropdown">
+            <span>
+                Our Services
+                <i class="fas fa-chevron-down nav-arrow"></i>
+            </span>
+            <ul class="dropdown-menu">
+                <li>ERP Consulting</li>
+                <li>Business Process Services</li>
+                <li>Products</li>
+                <li>Implementation Services</li>
+                <li>AMC/Support Services</li>
+                <li>Microsoft Dynamics Staffing</li>
+            </ul>
+        </li>
+
+        <!-- OUR OFFERINGS -->
+        <li class="dropdown">
+            <span>
+                Our Offerings
+                <i class="fas fa-chevron-down nav-arrow"></i>
+            </span>
+            <ul class="dropdown-menu">
+                <li>Microsoft Dynamics 365</li>
+                <li>Microsoft Dynamics CRM</li>
+                <li>Microsoft Dynamics AX</li>
+                <li>Microsoft Dynamics NAV</li>
+                <li>Microsoft SharePoint</li>
+                <li>Microsoft Office 365</li>
+                <li>Microsoft Azure</li>
+                <li>QMS</li>
+                <li>Power Platform</li>
+                <li>Power Automate</li>
+                <li>Power BI</li>
+                <li>Power Apps</li>
+                <li>Copilot</li>
+            </ul>
+        </li>
+
+        <!-- INDUSTRIES -->
+        <li class="dropdown">
+            <span>
+                Industries
+                <i class="fas fa-chevron-down nav-arrow"></i>
+            </span>
+            <ul class="dropdown-menu">
+                <li>Manufacturing</li>
+                <li>Service Based</li>
+                <li>Health Care</li>
+                <li>Education</li>
+                <li>Insurance</li>
+                <li>Retail & Commerce</li>
+                <li>Wholesales and Distribution</li>
+                <li>Pharmaceutical and Life Sciences</li>
+            </ul>
+        </li>
+
+        <!-- MORE -->
+        <li class="dropdown">
+            <span>
+                More
+                <i class="fas fa-chevron-down nav-arrow"></i>
+            </span>
+            <ul class="dropdown-menu">
+                <li>Dynamic 365 Pricing</li>
+                <li>Product Information</li>
+                <li>ERP Partner Change</li>
+                <li>Career</li>
+            </ul>
+        </li>
+
+        <li class="contact">Contact Us</li>
+
+    </ul>
+
+</nav>
+
+<div class="mobile-menu" [class.active]="isMenuOpen">
+    <div class="close-btn" (click)="toggleMenu()">✖</div>
+
+    <ul>
+
+        <li>Home</li>
+        <li>About Us</li>
+
+        <!-- OUR SERVICES -->
+        <li (click)="toggleDropdown('services')">
+            Our Services
+            <i class="fas fa-chevron-down arrow"></i>
+        </li>
+        <ul class="submenu" *ngIf="openMenu === 'services'">
+            <li>ERP Consulting</li>
+            <li>Business Process Services</li>
+            <li>Products</li>
+            <li>Implementation Services</li>
+            <li>AMC/Support Services</li>
+            <li>Microsoft Dynamics Staffing</li>
+        </ul>
+
+        <!-- OUR OFFERINGS -->
+        <li (click)="toggleDropdown('offerings')">
+            Our Offerings
+            <i class="fas fa-chevron-down arrow"></i>
+        </li>
+        <ul class="submenu" *ngIf="openMenu === 'offerings'">
+            <li>Microsoft Dynamics 365</li>
+            <li>Microsoft Dynamics CRM</li>
+            <li>Microsoft Dynamics AX</li>
+            <li>Microsoft Dynamics NAV</li>
+            <li>Microsoft SharePoint</li>
+            <li>Microsoft Office 365</li>
+            <li>Microsoft Azure</li>
+            <li>QMS</li>
+            <li>Power Platform</li>
+            <li>Power Automate</li>
+            <li>Power BI</li>
+            <li>Power Apps</li>
+            <li>Copilot</li>
+        </ul>
+
+        <!-- INDUSTRIES -->
+        <li (click)="toggleDropdown('industries')">
+            Industries
+            <i class="fas fa-chevron-down arrow"></i>
+        </li>
+        <ul class="submenu" *ngIf="openMenu === 'industries'">
+            <li>Manufacturing</li>
+            <li>Service Based</li>
+            <li>Health Care</li>
+            <li>Education</li>
+            <li>Insurance</li>
+            <li>Retail & Commerce</li>
+            <li>Wholesales and Distribution</li>
+            <li>Pharmaceutical and Life Sciences</li>
+        </ul>
+
+        <!-- MORE -->
+        <li (click)="toggleDropdown('more')">
+            More
+            <i class="fas fa-chevron-down arrow"></i>
+        </li>
+        <ul class="submenu" *ngIf="openMenu === 'more'">
+            <li>Dynamic 365 Pricing</li>
+            <li>Product Information</li>
+            <li>ERP Partner Change</li>
+            <li>Career</li>
+        </ul>
+
+        <li class="contact">Contact Us</li>
+
+    </ul>
+</div>
+
+<div class="hero">
+
+    <!-- Background Image -->
+    <img *ngIf="currentIndex === 0" src="assets/banner-main1.webp" class="hero-img" />
+
+    <img *ngIf="currentIndex === 1" src="assets/banner-main2.webp" class="hero-img" />
+    <!-- Overlay Content -->
+    <div class="hero-content">
+
+        <div *ngIf="currentIndex === 0" class="slide1">
+            <h1 class="hero-title">
+                {{ slides[0].title }}
+            </h1>
+
+            <h2 class="hero-subtitle">
+                {{ slides[0].subtitle }}
+            </h2>
+
+            <!-- GREEN BUTTONS -->
+            <div class="highlight-boxes">
+                <div>POWERED BY PEOPLE</div>
+                <div>FOCUSED ON SOLUTION</div>
+                <div>DRIVEN BY RESULTS</div>
+            </div>
+
+        </div>
+
+        <div *ngIf="currentIndex === 1" class="slide2">
+            <!-- TITLE -->
+            <h1 class="hero-title">
+                {{ slides[currentIndex].title }}
+            </h1>
+            <h2 class="hero-subtitle">
+                {{ slides[currentIndex].subtitle }}
+            </h2>
+            <div class="industry-grid">
+
+                <div class="industry-item">
+                    <img src="assets/Pharmaceutical & Life Sciences.webp" alt="" />
+                    <span>Pharmaceutical & Life Sciences</span>
+                </div>
+
+                <div class="industry-item">
+                    <img src="assets/health.webp" alt="" />
+                    <span>Healthcare</span>
+                </div>
+
+                <div class="industry-item">
+                    <img src="assets/bio-tech.webp" alt="" />
+                    <span>Biotech</span>
+                </div>
+
+                <div class="industry-item">
+                    <img src="assets/chemical.webp" alt="" />
+                    <span>Chemical</span>
+                </div>
+
+                <div class="industry-item">
+                    <img src="assets/delivery.webp" alt="" />
+                    <span>Manufacturing & Distribution</span>
+                </div>
+
+                <div class="industry-item">
+                    <img src="assets/bank.webp" alt="" />
+                    <span>Banking</span>
+                </div>
+
+                <div class="industry-item">
+                    <img src="assets/bulid.webp" alt="" />
+                    <span>Construction & Engineering</span>
+                </div>
+
+                <div class="industry-item">
+                    <img src="assets/real-estate.webp" alt="" />
+                    <span>Real Estate</span>
+                </div>
+
+                <div class="industry-item">
+                    <img src="assets/tele.webp" alt="" />
+                    <span>Telecommunication</span>
+                </div>
+
+                <div class="industry-item">
+                    <img src="assets/it-tech.webp" alt="" />
+                    <span>Information & Technology Industries</span>
+                </div>
+
+            </div>
+
+            <div class="cta-buttons">
+                <button>ERP Consulting</button>
+                <button>D365 Finance and Operations</button>
+                <button>Business Process Services</button>
+                <button>Dynamics Business Central</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Arrows -->
+    <button class="prev" (click)="prevSlide()">❮</button>
+    <button class="next" (click)="nextSlide()">❯</button>
+
+</div>
+
+<section class="services">
+
+    <div class="service-container">
+
+        <!-- CARD 1 -->
+        <div class="service-card">
+            <i class="fas fa-chart-pie"></i>
+            <h3>Microsoft Dynamics ERP</h3>
+            <div class="line"></div>
+            <p>
+                We are a Microsoft Dynamics Gold Certified partner offering ERP Consulting,
+                evaluation, implementation and maintenance services to achieve your ERP
+                objectives with the utmost confidentiality.
+            </p>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="service-card">
+            <i class="fas fa-puzzle-piece"></i>
+            <h3>Microsoft Dynamics 365 Apps</h3>
+            <div class="line"></div>
+            <p>
+                We deliver Microsoft Dynamics 365 as Enterprise Business Applications including
+                interfaces such as Sales, Services, Marketing, Project Management, Field Service
+                for improving business productivity and efficiency.
+            </p>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="service-card">
+            <i class="fas fa-chart-bar"></i>
+            <h3>Enterprise Business Applications</h3>
+            <div class="line"></div>
+            <p>
+                Our Enterprise Business Applications (EBA) include interfaces such as CRM and ERP
+                for improving business productivity and efficiency.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- 🔷 STATS SECTION -->
+<section class="stats">
+
+    <!-- BACKGROUND MAP -->
+    <div class="map-bg"></div>
+
+    <div class="stats-container">
+
+        <!-- TOP CONTENT -->
+        <div class="stats-top">
+
+            <div class="left">
+                <h3 class="impact-heading">
+                    We’ve been Increasing
+                    <span>productivity</span> and
+                    <span>efficiency!</span>
+                </h3>
+            </div>
+
+            <div class="right">
+                <p>
+                    We have sought out expansion and conducted wider research with our
+                    <b>ERP Implementation experience over past 15+ years</b> for offering
+                    organizations across different industry verticals with business insights
+                    and extensive tools attaining their priorities.
+                </p>
+            </div>
+        </div>
+
+        <!-- COUNTERS -->
+        <div class="stats-grid">
+
+            <div class="stat-item">
+                <div class="number">
+                    324 <span>+</span>
+                </div>
+                <p><b>Happy</b> Clients</p>
+            </div>
+
+            <div class="stat-item">
+                <div class="number">
+                    105 <span>+</span>
+                </div>
+                <p><b>Expert</b> Team</p>
+            </div>
+
+            <div class="stat-item">
+                <div class="number">
+                    15 <span>+</span>
+                </div>
+                <p><b>Awards</b> Winner</p>
+            </div>
+
+            <div class="stat-item">
+                <div class="number">
+                    180 <span>+</span>
+                </div>
+                <p><b>Positive</b> Reviews</p>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+<section class="consultancy">
+
+    <div class="bg-pattern"></div>
+
+    <div class="consultancy-container">
+
+        <!-- LEFT IMAGE -->
+        <div class="consult-left">
+            <div class="image-wrapper">
+                <img src="assets/team.webp" alt="team" />
+            </div>
+        </div>
+
+        <!-- RIGHT CONTENT -->
+        <div class="consult-right">
+            <h2 class="consult-title">
+                We’re a Global Stakeholder Relations and Partnership Building Consultancy.
+            </h2>
+
+            <p class="consult-desc">
+                We believe in keeping our word and in actively building strong relationships with the clients
+                before involving stakeholders and address any issues when they arise.
+            </p>
+
+            <!-- SERVICES -->
+            <div class="consult-services">
+
+                <div class="service">
+                    <h4><i class="fas fa-angle-right"></i> Business Process Services</h4>
+                    <p>
+                        Increase the speed of your business and ensure your clients get the quickest of response,
+                        as we are experts at Business Process Service.
+                    </p>
+                </div>
+
+                <div class="service">
+                    <h4><i class="fas fa-angle-right"></i> Process Automation</h4>
+                    <p>
+                        We implement and manage business process automation or digital transformation for
+                        streamlining your business operations enhancing service quality.
+                    </p>
+                </div>
+
+                <div class="service">
+                    <h4><i class="fas fa-angle-right"></i> Business Services Consulting</h4>
+                    <p>
+                        With our business service consulting as well as management consulting, we help organizations
+                        by analyzing their business motives and help them meet business goals.
+                    </p>
+                </div>
+
+                <div class="service">
+                    <h4><i class="fas fa-angle-right"></i> ERP Implementation</h4>
+                    <p>
+                        Our ERP implementation deals with the transfer of financial data by the hands of world-class
+                        top-notch consultants, subject matter experts with the best in class experience.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="core-services">
+
+    <!-- BACKGROUND IMAGE -->
+    <div class="core-bg"></div>
+
+    <!-- CONTENT -->
+    <div class="core-content">
+
+        <div class="core-text">
+            <h2>
+                We Position Our Clients at the Forefront of their Field by Advancing an Agenda.
+            </h2>
+
+            <p>
+                With our rigorous practices, as a Microsoft Dynamics Gold Certified partner we have much to offer our
+                clients looking for professional services for their business.
+                The following are the core services we extend.
+            </p>
+        </div>
+
+        <!-- CARDS -->
+        <div class="core-cards">
+
+            <div class="card">
+                <i class="fas fa-users"></i>
+                <h3>Consulting</h3>
+                <p>
+                    With a thorough consultation before project onset, our team designs a project model fulfilling your
+                    business objectives.
+                </p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-shopping-bag"></i>
+                <h3>Products</h3>
+                <p>
+                    We have industry-oriented products from Microsoft Dynamics 365 including ERP, CRM, AX, NAV.
+                </p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-cog"></i>
+                <h3>Services</h3>
+                <p>
+                    We offer end-to-end implementation services of Microsoft Dynamics ERP and CRM solutions.
+                </p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-handshake"></i>
+                <h3>Support</h3>
+                <p>
+                    Our dedicated support team offers 24x7x365 services ensuring customer satisfaction.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="about-erbrains">
+
+    <!-- BACKGROUND -->
+    <div class="about-bg"></div>
+
+    <div class="about-container">
+
+        <!-- LEFT CONTENT -->
+        <div class="about-left">
+
+            <div class="title-line"></div>
+
+            <h2>
+                ERBrains Is Strategically Placed to Help Businesses Deliver Better Products and Services.
+            </h2>
+
+            <p>
+                With 15 years of experience, a team of more than 100 business and technology professionals, and over 350
+                software implementations – we're the perfect partner to guide you through all phases of your ERP, CRM,
+                BI, and cloud transformation.
+            </p>
+
+            <p>
+                We as a Microsoft Dynamics Implementation partner, ERBrains is always focused on providing the right
+                solution to our customers to earn long term benefits and also support customers on adapting and enabling
+                technology to the best of its use.
+            </p>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="about-right">
+
+            <!-- MAIN IMAGE -->
+            <img src="assets/person.webp" class="main-img" />
+
+        </div>
+
+    </div>
+
+    <!-- LOGOS -->
+    <div class="tech-logos">
+
+        <img src="assets/d365.webp" />
+        <img src="assets/azure.webp" />
+        <img src="assets/powerbi.webp" />
+        <img src="assets/crm.webp" />
+
+    </div>
+
+</section>
+
+<section class="impact-section">
+
+    <!-- BACKGROUND -->
+    <div class="impact-bg"></div>
+
+    <!-- CONTENT -->
+    <div class="impact-container">
+
+        <!-- LEFT CONTENT -->
+        <div class="impact-left">
+
+            <div class="line"></div>
+
+            <h2>
+                Trusted Microsoft Dynamics Partner for ERP, CRM, Business Intelligence and Cloud Technologies.
+            </h2>
+
+            <p>
+                We have expanded well beyond our process research to provide organizations with business insights, tools
+                to achieve their priorities.
+            </p>
+
+            <p>
+                Our services include ERP/CRM Selection, ERP/CRM Implementation, Digital Strategy, Technology Assessment,
+                Change Management, Business Process Management, Business Process Reengineering, IT Infrastructure
+                Management, Business Analytics (BI) Implementation.
+            </p>
+
+        </div>
+
+        <!-- RIGHT STATS -->
+        <div class="impact-right">
+
+            <div class="circle">
+                <h3>15 <span>+</span></h3>
+                <p>Experience</p>
+            </div>
+
+            <div class="circle">
+                <h3>450 <span>+</span></h3>
+                <p>Software implementations</p>
+            </div>
+
+            <div class="circle">
+                <h3>100 <span>+</span></h3>
+                <p>Technology professionals</p>
+            </div>
+
+            <div class="circle">
+                <h3>120 <span>+</span></h3>
+                <p>Countries we serve</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="customers">
+
+    <div class="customers-header">
+
+        <span class="tag">OUR CLIENTS</span>
+
+        <h2>Trusted by Industry Leaders Worldwide</h2>
+
+        <p>
+            We collaborate with global organizations to deliver scalable and reliable solutions.
+        </p>
+
+    </div>
+
+    <div class="slider">
+
+        <div class="slide-track">
+
+            <div class="slide" *ngFor="let logo of logos">
+                <img [src]="logo" />
+            </div>
+
+            <div class="slide" *ngFor="let logo of logos">
+                <img [src]="logo" />
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-col contact">
+
+            <h3>CONTACT US</h3>
+
+            <!-- INDIA -->
+            <div class="location">
+
+                <i class="fas fa-map-marker-alt loc-icon"></i>
+
+                <div class="right-content">
+
+                    <div class="country">
+                        <img src="assets/flags/india.png" />
+                        <strong>INDIA</strong>
+                    </div>
+
+                    <p class="hq">HEAD QUARTERS</p>
+
+                    <p>
+                        Ground Floor, Antil HQ,<br>
+                        20, Cunningham Rd, Vasanth Nagar,<br>
+                        Bengaluru, Karnataka 560001
+                    </p>
+
+                    <p>Phone: 080-41673099</p>
+
+                </div>
+
+            </div>
+
+            <!-- US -->
+            <div class="location">
+
+                <i class="fas fa-map-marker-alt loc-icon"></i>
+
+                <div class="right-content">
+
+                    <div class="country">
+                        <img src="assets/flags/usa.png" />
+                        <strong>US</strong>
+                    </div>
+
+                    <p>
+                        14 Wall Street 20th Floor,<br>
+                        New York, NY 10005
+                    </p>
+
+                    <p>Phone: 212-618-1363</p>
+
+                </div>
+
+            </div>
+
+            <!-- UAE -->
+            <div class="location">
+
+                <i class="fas fa-map-marker-alt loc-icon"></i>
+
+                <div class="right-content">
+
+                    <div class="country">
+                        <img src="assets/flags/uae.png" />
+                        <strong>UAE</strong>
+                    </div>
+
+                    <p>
+                        Unit No. 101 6th Floor, One Business Centre,<br>
+                        OneJLT, JLT, Dubai
+                    </p>
+
+                    <p>Phone: +971 589275579</p>
+
+                </div>
+
+            </div>
+
+            <!-- AUSTRALIA -->
+            <div class="location">
+
+                <i class="fas fa-map-marker-alt loc-icon"></i>
+
+                <div class="right-content">
+
+                    <div class="country">
+                        <img src="assets/flags/australia.webp" />
+                        <strong>AUSTRALIA</strong>
+                    </div>
+
+                    <p>
+                        Ground Floor, 470 ST KILDA RD<br>
+                        Melbourne, VIC 3004
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer-col links">
+            <h3>USEFUL LINK</h3>
+
+            <ul>
+                <li>Microsoft Dynamics 365 Finance</li>
+                <li>Microsoft Dynamics 365 Operations</li>
+                <li>Microsoft Dynamics 365 Business Central</li>
+                <li>Microsoft Dynamics 365 Sales</li>
+                <li>Microsoft Dynamics 365 Customer Service</li>
+                <li>Microsoft Dynamics 365 Marketing</li>
+                <li>Microsoft Dynamics 365 Project Operations</li>
+                <li>Microsoft Dynamics 365 Field Service</li>
+            </ul>
+        </div>
+
+        <div class="footer-col newsletter">
+
+            <h3>SUBSCRIBE TO OUR NEWSLETTER</h3>
+
+            <p>If You Have Any Questions, You Can Contact With Us.</p>
+
+            <!-- INPUT -->
+            <div class="email-box">
+                <input type="email" placeholder="Your Email Id" />
+                <button>
+                    <i class="fas fa-envelope"></i>
+                </button>
+            </div>
+
+            <!-- SOCIAL -->
+            <div class="social">
+                <a href="https://www.facebook.com/erbrainsitsolutions/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/company/erbrains-it-solutions-private-limited/"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="https://x.com/erbrainss"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/erbrains_/"><i class="fab fa-instagram"></i></a>
+            </div>
+
+            <img src="/assets/microsoft-partner.png" class="partner-img" />
+
+        </div>
+
+    </div>
+
+</footer>
+
+<div class="footer-bar">
+    © ALL COPYRIGHTS RESERVED – ERBRAINS IT SOLUTIONS PVT LTD.
+    <span class="privacy">PRIVACY POLICY</span>
+</div>
+
+<!-- FLOATING BUTTONS -->
+<div class="floating-buttons">
+
+    <!-- WhatsApp -->
+    <div class="whatsapp-btn" (click)="openWhatsApp()">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+
+    <!-- Chat -->
+    <div class="chat-btn" (click)="toggleChat()">
+        <i class="fas fa-comment-dots"></i>
+    </div>
+
+</div>
+
+<div class="chat-popup" *ngIf="isChatOpen">
+
+    <div class="chat-header">
+        <h3>ERBrains IT Solutions</h3>
+        <span (click)="toggleChat()">✖</span>
+    </div>
+
+    <div class="chat-body">
+
+        <p>Welcome to ERBrains IT Solutions!</p>
+
+        <input type="text" placeholder="Name *" [(ngModel)]="chatForm.name" />
+        <input type="text" placeholder="Company Name *" [(ngModel)]="chatForm.company" />
+        <input type="email" placeholder="Email *" [(ngModel)]="chatForm.email" />
+        <input type="tel" placeholder="Phone *" [(ngModel)]="chatForm.phone" />
+        <textarea placeholder="Message *" [(ngModel)]="chatForm.message"></textarea>
+
+        <button (click)="startChat()">Start Chat</button>
+
+    </div>
+
+</div>
+
+<div class="scroll-btn" (click)="scrollPage()">
+    <i class="fas" [ngClass]="isAtTop ? 'fa-arrow-down' : 'fa-arrow-up'"></i>
+</div>

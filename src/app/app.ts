@@ -1,12 +1,10 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { HomeComponent } from './pages/home/home';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.scss'
+  standalone: true,
+  imports: [HomeComponent], 
+  templateUrl: './app.html'
 })
-export class App {
-  protected readonly title = signal('erbrains-redesign');
-}
+export class App {}
